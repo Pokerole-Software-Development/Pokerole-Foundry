@@ -2,12 +2,6 @@
 	"folders": [
 		{
 			"path": "."
-		},
-		{
-			"path": "../ClassGenerator"
-		},
-		{
-			"path": "../pokerole-core"
 		}
 	],
 	"settings": {
