@@ -1,0 +1,171 @@
+{
+	"isCustomSystemExport": true,
+	"actors": [
+		{
+			"type": "_template",
+			"name": "Mon Template",
+			"data": {
+				"hidden": [
+					{
+						"name": "MaxHP",
+						"value": "BaseHP + Vitality"
+					}
+				],
+				"header": {
+					"contents": [
+						{
+							"key": "",
+							"cssClass": "",
+							"role": "0",
+							"permission": "0",
+							"tooltip": "",
+							"contents": [
+								{
+									"key": "HP",
+									"cssClass": "",
+									"role": "0",
+									"permission": "1",
+									"tooltip": "",
+									"label": "HP",
+									"defaultValue": "",
+									"size": "full-size",
+									"allowDecimal": false,
+									"minVal": "0",
+									"maxVal": "${MaxHP}$",
+									"allowRelative": true,
+									"showControls": true,
+									"type": "numberField"
+								},
+								{
+									"key": "Will",
+									"cssClass": "",
+									"role": "0",
+									"permission": "1",
+									"tooltip": "",
+									"label": "Will",
+									"defaultValue": "",
+									"size": "full-size",
+									"allowDecimal": false,
+									"minVal": "",
+									"maxVal": "${MaxWill}$",
+									"allowRelative": true,
+									"showControls": true,
+									"type": "numberField"
+								}
+							],
+							"flow": "grid-2",
+							"align": "center",
+							"type": "panel"
+						},
+						{
+							"key": "Player",
+							"cssClass": "",
+							"role": "0",
+							"permission": "0",
+							"tooltip": "Player Name",
+							"label": "Player Name",
+							"defaultValue": "",
+							"size": "full-size",
+							"charList": "",
+							"maxLength": "",
+							"type": "textField"
+						}
+					],
+					"key": "custom_header",
+					"cssClass": null,
+					"role": 0,
+					"permission": 0,
+					"tooltip": null,
+					"flow": null,
+					"align": null,
+					"type": "panel"
+				},
+				"body": {
+					"contents": [
+						{
+							"key": "",
+							"cssClass": "",
+							"role": "0",
+							"permission": "0",
+							"tooltip": "",
+							"contents": [
+								{
+									"key": "bio",
+									"cssClass": null,
+									"role": "0",
+									"permission": "0",
+									"tooltip": "",
+									"contents": [
+										{
+											"key": "Bio",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": "",
+											"defaultValue": "",
+											"size": null,
+											"style": "sheet",
+											"type": "textArea"
+										}
+									],
+									"name": "Bio",
+									"type": "tab"
+								},
+								{
+									"key": "primary",
+									"cssClass": null,
+									"role": "0",
+									"permission": "2",
+									"tooltip": "",
+									"contents": [],
+									"name": "Primary",
+									"type": "tab"
+								},
+								{
+									"key": "moves",
+									"cssClass": null,
+									"role": "0",
+									"permission": "2",
+									"tooltip": "",
+									"contents": [],
+									"name": "Moves",
+									"type": "tab"
+								}
+							],
+							"type": "tabbedPanel"
+						}
+					],
+					"key": "custom_body",
+					"cssClass": null,
+					"role": 0,
+					"permission": 0,
+					"tooltip": null,
+					"flow": null,
+					"align": null,
+					"type": "panel"
+				},
+				"display": {
+					"width": "600",
+					"height": "600",
+					"fix_size": false,
+					"pp_width": "64",
+					"pp_height": "64"
+				},
+				"attributeBar": {
+					"HP": {
+						"value": "0",
+						"max": "$(HpMax)$"
+					}
+				},
+				"activeEffects": {}
+			},
+			"flags": {
+				"custom-system-builder": {
+					"version": "2.1.0"
+				}
+			}
+		}
+	],
+	"items": []
+}
