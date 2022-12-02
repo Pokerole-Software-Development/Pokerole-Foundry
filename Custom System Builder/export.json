@@ -8,7 +8,11 @@
 				"hidden": [
 					{
 						"name": "MaxHP",
-						"value": "BaseHP + Vitality"
+						"value": "DexBaseHp + Vitality"
+					},
+					{
+						"name": "MaxWill",
+						"value": "Insight+2"
 					}
 				],
 				"header": {
@@ -51,6 +55,194 @@
 									"allowRelative": true,
 									"showControls": true,
 									"type": "numberField"
+								},
+								{
+									"key": "Type1",
+									"cssClass": "",
+									"role": "0",
+									"permission": "1",
+									"tooltip": "",
+									"label": "Primary Type",
+									"defaultValue": "Normal",
+									"size": "full-size",
+									"options": [
+										{
+											"key": "Normal",
+											"value": "Normal"
+										},
+										{
+											"key": "Typeless",
+											"value": "Typeless"
+										},
+										{
+											"key": "Fire",
+											"value": "Fire"
+										},
+										{
+											"key": "Fighting",
+											"value": "Fighting"
+										},
+										{
+											"key": "Water",
+											"value": "Water"
+										},
+										{
+											"key": "Flying",
+											"value": "Flying"
+										},
+										{
+											"key": "Grass",
+											"value": "Grass"
+										},
+										{
+											"key": "Poison",
+											"value": "Poison"
+										},
+										{
+											"key": "Electric",
+											"value": "Electric"
+										},
+										{
+											"key": "Ground",
+											"value": "Ground"
+										},
+										{
+											"key": "Psychic",
+											"value": "Psychic"
+										},
+										{
+											"key": "Rock",
+											"value": "Rock"
+										},
+										{
+											"key": "Ice",
+											"value": "Ice"
+										},
+										{
+											"key": "Bug",
+											"value": "Bug"
+										},
+										{
+											"key": "Dragon",
+											"value": "Dragon"
+										},
+										{
+											"key": "Ghost",
+											"value": "Ghost"
+										},
+										{
+											"key": "Dark",
+											"value": "Dark"
+										},
+										{
+											"key": "Steel",
+											"value": "Steel"
+										},
+										{
+											"key": "Fairy",
+											"value": "Fairy"
+										}
+									],
+									"tableKey": null,
+									"tableKeyColumn": null,
+									"tableLabelColumn": null,
+									"type": "select"
+								},
+								{
+									"key": "Type2",
+									"cssClass": "",
+									"role": "0",
+									"permission": "1",
+									"tooltip": "",
+									"label": "Secondary Type",
+									"defaultValue": "None",
+									"size": "full-size",
+									"options": [
+										{
+											"key": "None",
+											"value": "None"
+										},
+										{
+											"key": "Normal",
+											"value": "Normal"
+										},
+										{
+											"key": "Typeless",
+											"value": "Typeless"
+										},
+										{
+											"key": "Fire",
+											"value": "Fire"
+										},
+										{
+											"key": "Fighting",
+											"value": "Fighting"
+										},
+										{
+											"key": "Water",
+											"value": "Water"
+										},
+										{
+											"key": "Flying",
+											"value": "Flying"
+										},
+										{
+											"key": "Grass",
+											"value": "Grass"
+										},
+										{
+											"key": "Poison",
+											"value": "Poison"
+										},
+										{
+											"key": "Electric",
+											"value": "Electric"
+										},
+										{
+											"key": "Ground",
+											"value": "Ground"
+										},
+										{
+											"key": "Psychic",
+											"value": "Psychic"
+										},
+										{
+											"key": "Rock",
+											"value": "Rock"
+										},
+										{
+											"key": "Ice",
+											"value": "Ice"
+										},
+										{
+											"key": "Bug",
+											"value": "Bug"
+										},
+										{
+											"key": "Dragon",
+											"value": "Dragon"
+										},
+										{
+											"key": "Ghost",
+											"value": "Ghost"
+										},
+										{
+											"key": "Dark",
+											"value": "Dark"
+										},
+										{
+											"key": "Steel",
+											"value": "Steel"
+										},
+										{
+											"key": "Fairy",
+											"value": "Fairy"
+										}
+									],
+									"tableKey": null,
+									"tableKeyColumn": null,
+									"tableLabelColumn": null,
+									"type": "select"
 								}
 							],
 							"flow": "grid-2",
@@ -98,7 +290,7 @@
 									"contents": [
 										{
 											"key": "Bio",
-											"cssClass": "",
+											"cssClass": ".bio",
 											"role": "0",
 											"permission": "0",
 											"tooltip": "",
@@ -118,7 +310,981 @@
 									"role": "0",
 									"permission": "2",
 									"tooltip": "",
-									"contents": [],
+									"contents": [
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [],
+											"flow": "grid-2",
+											"align": "center",
+											"type": "panel"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": null,
+											"defaultValue": null,
+											"size": "full-size",
+											"icon": "",
+											"value": "Primary Stats",
+											"prefix": "",
+											"suffix": "",
+											"rollMessage": "",
+											"altRollMessage": "",
+											"style": "title",
+											"type": "label"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [
+												[
+													{
+														"key": "Strength",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Strength",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "${DexMaxStrength}$",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													},
+													{
+														"key": "Special",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Special",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "${DexMaxSpecial}$",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "Dexterity",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Dexterity",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "${DexMaxDexterity}$",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													},
+													{
+														"key": "Insight",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Insight",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "${DexMaxInsight}$",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "Vitality",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Vitality",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "${DexMaxVitality}$",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												]
+											],
+											"cols": "2",
+											"rows": "3",
+											"layout": "",
+											"type": "table"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": null,
+											"defaultValue": null,
+											"size": "full-size",
+											"icon": "",
+											"value": "Social Stats",
+											"prefix": "",
+											"suffix": "",
+											"rollMessage": "",
+											"altRollMessage": "",
+											"style": "title",
+											"type": "label"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [
+												[
+													{
+														"key": "Tough",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Tough",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "5",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													},
+													{
+														"key": "Cute",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Cute",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "5",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "Cool",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Cool",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "5",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													},
+													{
+														"key": "Clever",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Clever",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "5",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "Beauty",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "Beauty",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "5",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												]
+											],
+											"cols": "2",
+											"rows": "3",
+											"layout": "",
+											"type": "table"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": null,
+											"defaultValue": null,
+											"size": "full-size",
+											"icon": "",
+											"value": "Skills",
+											"prefix": "",
+											"suffix": "",
+											"rollMessage": "",
+											"altRollMessage": "",
+											"style": "title",
+											"type": "label"
+										},
+										{
+											"key": "",
+											"cssClass": ".skills",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": null,
+													"defaultValue": null,
+													"size": "full-size",
+													"icon": "",
+													"value": "Fight",
+													"prefix": "",
+													"suffix": "",
+													"rollMessage": "",
+													"altRollMessage": "",
+													"style": "subtitle",
+													"type": "label"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": null,
+													"defaultValue": null,
+													"size": "full-size",
+													"icon": "",
+													"value": "Survival",
+													"prefix": "",
+													"suffix": "",
+													"rollMessage": "",
+													"altRollMessage": "",
+													"style": "subtitle",
+													"type": "label"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": null,
+													"defaultValue": null,
+													"size": "full-size",
+													"icon": "",
+													"value": "Social",
+													"prefix": "",
+													"suffix": "",
+													"rollMessage": "",
+													"altRollMessage": "",
+													"style": "subtitle",
+													"type": "label"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": null,
+													"defaultValue": null,
+													"size": "full-size",
+													"icon": "",
+													"value": "Extra",
+													"prefix": "",
+													"suffix": "",
+													"rollMessage": "",
+													"altRollMessage": "",
+													"style": "subtitle",
+													"type": "label"
+												},
+												{
+													"key": "",
+													"cssClass": ".fight",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"contents": [
+														{
+															"key": "Brawl",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Brawl",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Channel",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Channel",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Clash",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Clash",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Evasion",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Evasion",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														}
+													],
+													"flow": "vertical",
+													"align": "center",
+													"type": "panel"
+												},
+												{
+													"key": "",
+													"cssClass": ".survival",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"contents": [
+														{
+															"key": "Alert",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Alert",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Athletic",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Athletic",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Nature",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Nature",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Stealth",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Stealth",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														}
+													],
+													"flow": "vertical",
+													"align": "center",
+													"type": "panel"
+												},
+												{
+													"key": "",
+													"cssClass": ".social",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"contents": [
+														{
+															"key": "Allure",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Allure",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Etiquette",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Etiquette",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Intimidate",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Intimidate",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														},
+														{
+															"key": "Perform",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": "Perform",
+															"defaultValue": "0",
+															"size": "full-size",
+															"allowDecimal": false,
+															"minVal": "0",
+															"maxVal": "5",
+															"allowRelative": false,
+															"showControls": false,
+															"type": "numberField"
+														}
+													],
+													"flow": "vertical",
+													"align": "center",
+													"type": "panel"
+												},
+												{
+													"key": "",
+													"cssClass": ".extraSkills",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"contents": [
+														{
+															"key": "ExtraSkills",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"rowLayout": [
+																{
+																	"key": "Name",
+																	"cssClass": null,
+																	"role": "0",
+																	"permission": "0",
+																	"tooltip": "",
+																	"label": "",
+																	"defaultValue": "",
+																	"size": "full-size",
+																	"charList": "",
+																	"maxLength": "",
+																	"type": "textField",
+																	"align": "left",
+																	"colName": "Skill Name"
+																},
+																{
+																	"key": "Value",
+																	"cssClass": null,
+																	"role": "0",
+																	"permission": "0",
+																	"tooltip": "",
+																	"label": "",
+																	"defaultValue": "0",
+																	"size": "full-size",
+																	"allowDecimal": false,
+																	"minVal": "0",
+																	"maxVal": "5",
+																	"allowRelative": false,
+																	"showControls": false,
+																	"type": "numberField",
+																	"align": "left",
+																	"colName": "Value"
+																}
+															],
+															"head": true,
+															"deleteWarning": true,
+															"type": "dynamicTable"
+														}
+													],
+													"flow": "vertical",
+													"align": "center",
+													"type": "panel"
+												}
+											],
+											"flow": "grid-4",
+											"align": "center",
+											"type": "panel"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": null,
+											"defaultValue": null,
+											"size": "full-size",
+											"icon": "",
+											"value": "Type Effectiveness",
+											"prefix": "",
+											"suffix": "",
+											"rollMessage": "",
+											"altRollMessage": "",
+											"style": "title",
+											"type": "label"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": null,
+													"defaultValue": null,
+													"size": "full-size",
+													"icon": "",
+													"value": "Weaknesses",
+													"prefix": "",
+													"suffix": "",
+													"rollMessage": "",
+													"altRollMessage": "",
+													"style": "subtitle",
+													"type": "label"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": null,
+													"defaultValue": null,
+													"size": "full-size",
+													"icon": "",
+													"value": "Resistances",
+													"prefix": "",
+													"suffix": "",
+													"rollMessage": "",
+													"altRollMessage": "",
+													"style": "subtitle",
+													"type": "label"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": null,
+													"defaultValue": null,
+													"size": "full-size",
+													"icon": "",
+													"value": "Immunities",
+													"prefix": "",
+													"suffix": "",
+													"rollMessage": "",
+													"altRollMessage": "",
+													"style": "subtitle",
+													"type": "label"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"contents": [
+														{
+															"key": "",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": null,
+															"defaultValue": null,
+															"size": "full-size",
+															"icon": "",
+															"value": "+1",
+															"prefix": "",
+															"suffix": "",
+															"rollMessage": "",
+															"altRollMessage": "",
+															"style": "label",
+															"type": "label"
+														},
+														{
+															"key": "Weaknesses1",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"rowLayout": [],
+															"head": false,
+															"deleteWarning": false,
+															"type": "dynamicTable"
+														},
+														{
+															"key": "",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": null,
+															"defaultValue": null,
+															"size": "full-size",
+															"icon": "",
+															"value": "+2",
+															"prefix": "",
+															"suffix": "",
+															"rollMessage": "",
+															"altRollMessage": "",
+															"style": "label",
+															"type": "label"
+														},
+														{
+															"key": "Weaknesses2",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"rowLayout": [],
+															"head": false,
+															"deleteWarning": false,
+															"type": "dynamicTable"
+														}
+													],
+													"flow": "vertical",
+													"align": "center",
+													"type": "panel"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"contents": [
+														{
+															"key": "",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": null,
+															"defaultValue": null,
+															"size": "full-size",
+															"icon": "",
+															"value": "-1",
+															"prefix": "",
+															"suffix": "",
+															"rollMessage": "",
+															"altRollMessage": "",
+															"style": "label",
+															"type": "label"
+														},
+														{
+															"key": "Resistances1",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"rowLayout": [],
+															"head": false,
+															"deleteWarning": false,
+															"type": "dynamicTable"
+														},
+														{
+															"key": "",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": null,
+															"defaultValue": null,
+															"size": "full-size",
+															"icon": "",
+															"value": "-2",
+															"prefix": "",
+															"suffix": "",
+															"rollMessage": "",
+															"altRollMessage": "",
+															"style": "label",
+															"type": "label"
+														},
+														{
+															"key": "Resistances2",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"rowLayout": [],
+															"head": false,
+															"deleteWarning": false,
+															"type": "dynamicTable"
+														}
+													],
+													"flow": "vertical",
+													"align": "center",
+													"type": "panel"
+												},
+												{
+													"key": "",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"contents": [
+														{
+															"key": "",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"label": null,
+															"defaultValue": null,
+															"size": "full-size",
+															"icon": "",
+															"value": "x0",
+															"prefix": "",
+															"suffix": "",
+															"rollMessage": "",
+															"altRollMessage": "",
+															"style": "label",
+															"type": "label"
+														},
+														{
+															"key": "Immunities",
+															"cssClass": "",
+															"role": "0",
+															"permission": "0",
+															"tooltip": "",
+															"rowLayout": [],
+															"head": false,
+															"deleteWarning": false,
+															"type": "dynamicTable"
+														}
+													],
+													"flow": "vertical",
+													"align": "center",
+													"type": "panel"
+												}
+											],
+											"flow": "grid-3",
+											"align": "center",
+											"type": "panel"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [
+												{
+													"key": "Happiness",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Happiness",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "5",
+													"allowRelative": false,
+													"showControls": false,
+													"type": "numberField"
+												},
+												{
+													"key": "Loyalty",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Loyalty",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "5",
+													"allowRelative": false,
+													"showControls": false,
+													"type": "numberField"
+												},
+												{
+													"key": "BattleCount",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Battle Count",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "",
+													"allowRelative": true,
+													"showControls": true,
+													"type": "numberField"
+												},
+												{
+													"key": "VictoryCount",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Victory Count",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "",
+													"allowRelative": true,
+													"showControls": true,
+													"type": "numberField"
+												}
+											],
+											"flow": "grid-4",
+											"align": "center",
+											"type": "panel"
+										}
+									],
 									"name": "Primary",
 									"type": "tab"
 								},
@@ -128,12 +1294,635 @@
 									"role": "0",
 									"permission": "2",
 									"tooltip": "",
-									"contents": [],
+									"contents": [
+										{
+											"key": "",
+											"cssClass": ".moveList",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"rowLayout": [],
+											"head": false,
+											"deleteWarning": false,
+											"headDisplay": true,
+											"showDelete": true,
+											"nameAlign": "left",
+											"nameLabel": "Name",
+											"templateFilter": [
+												"RQDYwiJcS9tCGyj3"
+											],
+											"itemFilter": [],
+											"type": "itemContainer"
+										}
+									],
 									"name": "Moves",
+									"type": "tab"
+								},
+								{
+									"key": "baseMonInfo",
+									"cssClass": null,
+									"role": "1",
+									"permission": "2",
+									"tooltip": "Definition of this pokemon's species",
+									"contents": [
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [
+												{
+													"key": "DexName",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Species Name",
+													"defaultValue": "",
+													"size": "full-size",
+													"charList": "",
+													"maxLength": "",
+													"type": "textField"
+												},
+												{
+													"key": "DexNum",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "DexNum",
+													"defaultValue": "",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "",
+													"maxVal": "",
+													"allowRelative": false,
+													"showControls": false,
+													"type": "numberField"
+												},
+												{
+													"key": "DexType1",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Primary Type",
+													"defaultValue": "Normal",
+													"size": "full-size",
+													"options": [
+														{
+															"key": "Normal",
+															"value": "Normal"
+														},
+														{
+															"key": "Typeless",
+															"value": "Typeless"
+														},
+														{
+															"key": "Fire",
+															"value": "Fire"
+														},
+														{
+															"key": "Fighting",
+															"value": "Fighting"
+														},
+														{
+															"key": "Water",
+															"value": "Water"
+														},
+														{
+															"key": "Flying",
+															"value": "Flying"
+														},
+														{
+															"key": "Grass",
+															"value": "Grass"
+														},
+														{
+															"key": "Poison",
+															"value": "Poison"
+														},
+														{
+															"key": "Electric",
+															"value": "Electric"
+														},
+														{
+															"key": "Ground",
+															"value": "Ground"
+														},
+														{
+															"key": "Psychic",
+															"value": "Psychic"
+														},
+														{
+															"key": "Rock",
+															"value": "Rock"
+														},
+														{
+															"key": "Ice",
+															"value": "Ice"
+														},
+														{
+															"key": "Bug",
+															"value": "Bug"
+														},
+														{
+															"key": "Dragon",
+															"value": "Dragon"
+														},
+														{
+															"key": "Ghost",
+															"value": "Ghost"
+														},
+														{
+															"key": "Dark",
+															"value": "Dark"
+														},
+														{
+															"key": "Steel",
+															"value": "Steel"
+														},
+														{
+															"key": "Fairy",
+															"value": "Fairy"
+														}
+													],
+													"tableKey": null,
+													"tableKeyColumn": null,
+													"tableLabelColumn": null,
+													"type": "select"
+												},
+												{
+													"key": "DexType2",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Secondary Type",
+													"defaultValue": "None",
+													"size": "full-size",
+													"options": [
+														{
+															"key": "None",
+															"value": "None"
+														},
+														{
+															"key": "Normal",
+															"value": "Normal"
+														},
+														{
+															"key": "Typeless",
+															"value": "Typeless"
+														},
+														{
+															"key": "Fire",
+															"value": "Fire"
+														},
+														{
+															"key": "Fighting",
+															"value": "Fighting"
+														},
+														{
+															"key": "Water",
+															"value": "Water"
+														},
+														{
+															"key": "Flying",
+															"value": "Flying"
+														},
+														{
+															"key": "Grass",
+															"value": "Grass"
+														},
+														{
+															"key": "Poison",
+															"value": "Poison"
+														},
+														{
+															"key": "Electric",
+															"value": "Electric"
+														},
+														{
+															"key": "Ground",
+															"value": "Ground"
+														},
+														{
+															"key": "Psychic",
+															"value": "Psychic"
+														},
+														{
+															"key": "Rock",
+															"value": "Rock"
+														},
+														{
+															"key": "Ice",
+															"value": "Ice"
+														},
+														{
+															"key": "Bug",
+															"value": "Bug"
+														},
+														{
+															"key": "Dragon",
+															"value": "Dragon"
+														},
+														{
+															"key": "Ghost",
+															"value": "Ghost"
+														},
+														{
+															"key": "Dark",
+															"value": "Dark"
+														},
+														{
+															"key": "Steel",
+															"value": "Steel"
+														},
+														{
+															"key": "Fairy",
+															"value": "Fairy"
+														}
+													],
+													"tableKey": null,
+													"tableKeyColumn": null,
+													"tableLabelColumn": null,
+													"type": "select"
+												},
+												{
+													"key": "DexBaseHp",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Base Hp",
+													"defaultValue": "1",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "1",
+													"maxVal": "",
+													"allowRelative": false,
+													"showControls": false,
+													"type": "numberField"
+												}
+											],
+											"flow": "grid-2",
+											"align": "center",
+											"type": "panel"
+										},
+										{
+											"key": "",
+											"cssClass": ".statTable",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"contents": [
+												[
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Stat",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "title",
+														"type": "label"
+													},
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Initial",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "title",
+														"type": "label"
+													},
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Max",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "title",
+														"type": "label"
+													}
+												],
+												[
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Strength",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "label",
+														"type": "label"
+													},
+													{
+														"key": "DexInitialStrength",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": true,
+														"type": "numberField"
+													},
+													{
+														"key": "DexMaxStrength",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Dexterity",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "label",
+														"type": "label"
+													},
+													{
+														"key": "DexInitialDexterity",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": true,
+														"type": "numberField"
+													},
+													{
+														"key": "DexMaxDexterity",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Vitality",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "label",
+														"type": "label"
+													},
+													{
+														"key": "DexInitialVitality",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": true,
+														"type": "numberField"
+													},
+													{
+														"key": "DexMaxVitality",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Special",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "label",
+														"type": "label"
+													},
+													{
+														"key": "DexInitialSpecial",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": true,
+														"type": "numberField"
+													},
+													{
+														"key": "DexMaxSpecial",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												],
+												[
+													{
+														"key": "",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": null,
+														"defaultValue": null,
+														"size": "full-size",
+														"icon": "",
+														"value": "Insight",
+														"prefix": "",
+														"suffix": "",
+														"rollMessage": "",
+														"altRollMessage": "",
+														"style": "label",
+														"type": "label"
+													},
+													{
+														"key": "DexInitialInsight",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": true,
+														"type": "numberField"
+													},
+													{
+														"key": "DexMaxInsight",
+														"cssClass": "",
+														"role": "0",
+														"permission": "0",
+														"tooltip": "",
+														"label": "",
+														"defaultValue": "1",
+														"size": "full-size",
+														"allowDecimal": false,
+														"minVal": "1",
+														"maxVal": "",
+														"allowRelative": false,
+														"showControls": false,
+														"type": "numberField"
+													}
+												]
+											],
+											"cols": "3",
+											"rows": "6",
+											"layout": "lcc",
+											"type": "table"
+										}
+									],
+									"name": "Base Mon Info",
 									"type": "tab"
 								}
 							],
 							"type": "tabbedPanel"
+						},
+						{
+							"key": "",
+							"cssClass": "",
+							"role": "0",
+							"permission": "0",
+							"tooltip": "",
+							"label": null,
+							"defaultValue": null,
+							"size": "full-size",
+							"icon": "",
+							"value": "Outside tabbed pane",
+							"prefix": "",
+							"suffix": "",
+							"rollMessage": "",
+							"altRollMessage": "",
+							"style": "label",
+							"type": "label"
 						}
 					],
 					"key": "custom_body",
@@ -167,5 +1956,76 @@
 			}
 		}
 	],
-	"items": []
+	"items": [
+		{
+			"type": "_equippableItemTemplate",
+			"name": "Ability",
+			"data": {
+				"hidden": [],
+				"header": {
+					"contents": [
+						{
+							"key": "Description",
+							"cssClass": "",
+							"role": "0",
+							"permission": "0",
+							"tooltip": "",
+							"label": "Description",
+							"defaultValue": "",
+							"size": null,
+							"style": "sheet",
+							"type": "textArea"
+						}
+					],
+					"cssClass": null,
+					"role": 0,
+					"permission": 0,
+					"tooltip": null,
+					"flow": null,
+					"align": null,
+					"type": "panel"
+				},
+				"body": {
+					"contents": []
+				},
+				"display": {
+					"width": "600",
+					"height": "600",
+					"fix_size": false,
+					"pp_width": "64",
+					"pp_height": "64"
+				}
+			},
+			"flags": {
+				"custom-system-builder": {
+					"version": "2.1.0"
+				}
+			}
+		},
+		{
+			"type": "_equippableItemTemplate",
+			"name": "Move",
+			"data": {
+				"hidden": [],
+				"header": {
+					"contents": []
+				},
+				"body": {
+					"contents": []
+				},
+				"display": {
+					"width": "600",
+					"height": "600",
+					"fix_size": false,
+					"pp_width": "64",
+					"pp_height": "64"
+				}
+			},
+			"flags": {
+				"custom-system-builder": {
+					"version": "2.1.0"
+				}
+			}
+		}
+	]
 }
