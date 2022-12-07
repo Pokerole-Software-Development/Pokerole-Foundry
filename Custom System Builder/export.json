@@ -8,11 +8,11 @@
 				"hidden": [
 					{
 						"name": "MaxHP",
-						"value": "DexBaseHp + Vitality"
+						"value": "${DexBaseHp + Vitality}$"
 					},
 					{
 						"name": "MaxWill",
-						"value": "Insight+2"
+						"value": "${Insight + 2}$"
 					}
 				],
 				"header": {
@@ -25,36 +25,96 @@
 							"tooltip": "",
 							"contents": [
 								{
-									"key": "HP",
+									"key": "",
 									"cssClass": "",
 									"role": "0",
-									"permission": "1",
+									"permission": "0",
 									"tooltip": "",
-									"label": "HP",
-									"defaultValue": "",
-									"size": "full-size",
-									"allowDecimal": false,
-									"minVal": "0",
-									"maxVal": "${MaxHP}$",
-									"allowRelative": true,
-									"showControls": true,
-									"type": "numberField"
+									"contents": [
+										{
+											"key": "HP",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": "HP",
+											"defaultValue": "0",
+											"size": "full-size",
+											"allowDecimal": false,
+											"minVal": "${-MaxHP}$",
+											"maxVal": "${MaxHP}$",
+											"allowRelative": true,
+											"showControls": true,
+											"type": "numberField"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": null,
+											"defaultValue": null,
+											"size": "full-size",
+											"icon": "",
+											"value": "/ ${MaxHP}$",
+											"prefix": "",
+											"suffix": "",
+											"rollMessage": "",
+											"altRollMessage": "",
+											"style": "label",
+											"type": "label"
+										}
+									],
+									"flow": "horizontal",
+									"align": "right",
+									"type": "panel"
 								},
 								{
-									"key": "Will",
+									"key": "",
 									"cssClass": "",
 									"role": "0",
-									"permission": "1",
+									"permission": "0",
 									"tooltip": "",
-									"label": "Will",
-									"defaultValue": "",
-									"size": "full-size",
-									"allowDecimal": false,
-									"minVal": "",
-									"maxVal": "${MaxWill}$",
-									"allowRelative": true,
-									"showControls": true,
-									"type": "numberField"
+									"contents": [
+										{
+											"key": "Will",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": "Will",
+											"defaultValue": "0",
+											"size": "full-size",
+											"allowDecimal": false,
+											"minVal": "0",
+											"maxVal": "${MaxWill}$",
+											"allowRelative": true,
+											"showControls": true,
+											"type": "numberField"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": null,
+											"defaultValue": null,
+											"size": "full-size",
+											"icon": "",
+											"value": "/ ${MaxWill}$",
+											"prefix": "",
+											"suffix": "",
+											"rollMessage": "",
+											"altRollMessage": "",
+											"style": "label",
+											"type": "label"
+										}
+									],
+									"flow": "horizontal",
+									"align": "right",
+									"type": "panel"
 								},
 								{
 									"key": "Type1",
@@ -949,6 +1009,106 @@
 											"role": "0",
 											"permission": "0",
 											"tooltip": "",
+											"contents": [
+												{
+													"key": "Happiness",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Happiness",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "5",
+													"allowRelative": false,
+													"showControls": false,
+													"type": "numberField"
+												},
+												{
+													"key": "Loyalty",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Loyalty",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "5",
+													"allowRelative": false,
+													"showControls": false,
+													"type": "numberField"
+												},
+												{
+													"key": "BattleCount",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Battle Count",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "",
+													"allowRelative": true,
+													"showControls": true,
+													"type": "numberField"
+												},
+												{
+													"key": "VictoryCount",
+													"cssClass": "",
+													"role": "0",
+													"permission": "0",
+													"tooltip": "",
+													"label": "Victory Count",
+													"defaultValue": "0",
+													"size": "full-size",
+													"allowDecimal": false,
+													"minVal": "0",
+													"maxVal": "",
+													"allowRelative": true,
+													"showControls": true,
+													"type": "numberField"
+												}
+											],
+											"flow": "grid-4",
+											"align": "center",
+											"type": "panel"
+										}
+									],
+									"name": "Primary",
+									"type": "tab"
+								},
+								{
+									"key": "fight",
+									"cssClass": null,
+									"role": "1",
+									"permission": "2",
+									"tooltip": "",
+									"contents": [
+										{
+											"key": "HeldItem",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
+											"label": "Held Item",
+											"defaultValue": "",
+											"size": "full-size",
+											"charList": "",
+											"maxLength": "",
+											"type": "textField"
+										},
+										{
+											"key": "",
+											"cssClass": "",
+											"role": "0",
+											"permission": "0",
+											"tooltip": "",
 											"label": null,
 											"defaultValue": null,
 											"size": "full-size",
@@ -1207,85 +1367,9 @@
 											"flow": "grid-3",
 											"align": "center",
 											"type": "panel"
-										},
-										{
-											"key": "",
-											"cssClass": "",
-											"role": "0",
-											"permission": "0",
-											"tooltip": "",
-											"contents": [
-												{
-													"key": "Happiness",
-													"cssClass": "",
-													"role": "0",
-													"permission": "0",
-													"tooltip": "",
-													"label": "Happiness",
-													"defaultValue": "0",
-													"size": "full-size",
-													"allowDecimal": false,
-													"minVal": "0",
-													"maxVal": "5",
-													"allowRelative": false,
-													"showControls": false,
-													"type": "numberField"
-												},
-												{
-													"key": "Loyalty",
-													"cssClass": "",
-													"role": "0",
-													"permission": "0",
-													"tooltip": "",
-													"label": "Loyalty",
-													"defaultValue": "0",
-													"size": "full-size",
-													"allowDecimal": false,
-													"minVal": "0",
-													"maxVal": "5",
-													"allowRelative": false,
-													"showControls": false,
-													"type": "numberField"
-												},
-												{
-													"key": "BattleCount",
-													"cssClass": "",
-													"role": "0",
-													"permission": "0",
-													"tooltip": "",
-													"label": "Battle Count",
-													"defaultValue": "0",
-													"size": "full-size",
-													"allowDecimal": false,
-													"minVal": "0",
-													"maxVal": "",
-													"allowRelative": true,
-													"showControls": true,
-													"type": "numberField"
-												},
-												{
-													"key": "VictoryCount",
-													"cssClass": "",
-													"role": "0",
-													"permission": "0",
-													"tooltip": "",
-													"label": "Victory Count",
-													"defaultValue": "0",
-													"size": "full-size",
-													"allowDecimal": false,
-													"minVal": "0",
-													"maxVal": "",
-													"allowRelative": true,
-													"showControls": true,
-													"type": "numberField"
-												}
-											],
-											"flow": "grid-4",
-											"align": "center",
-											"type": "panel"
 										}
 									],
-									"name": "Primary",
+									"name": "Fight Info",
 									"type": "tab"
 								},
 								{
@@ -1319,7 +1403,7 @@
 									"type": "tab"
 								},
 								{
-									"key": "baseMonInfo",
+									"key": "dex",
 									"cssClass": null,
 									"role": "1",
 									"permission": "2",
@@ -1900,7 +1984,7 @@
 											"type": "table"
 										}
 									],
-									"name": "Base Mon Info",
+									"name": "Dex",
 									"type": "tab"
 								}
 							],
@@ -2011,7 +2095,27 @@
 					"contents": []
 				},
 				"body": {
-					"contents": []
+					"contents": [
+						{
+							"key": "Description",
+							"cssClass": "",
+							"role": "0",
+							"permission": "0",
+							"tooltip": "",
+							"label": "Description",
+							"defaultValue": "",
+							"size": null,
+							"style": "sheet",
+							"type": "textArea"
+						}
+					],
+					"cssClass": null,
+					"role": 0,
+					"permission": 0,
+					"tooltip": null,
+					"flow": null,
+					"align": null,
+					"type": "panel"
 				},
 				"display": {
 					"width": "600",
