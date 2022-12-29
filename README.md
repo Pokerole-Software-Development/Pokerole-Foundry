@@ -1,3 +1,5 @@
+Note: This project is defunct and is kept for archival purposes and possibly grabbing ideas and such from
+
 You will need to run the following to get this to build
 `npm install`
 `npm install -g grunt-cli typescript`
